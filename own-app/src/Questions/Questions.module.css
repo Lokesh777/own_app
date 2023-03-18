@@ -1,0 +1,90 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    gap: 1rem;
+    background-color: rgb(4, 4, 30);
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin-bottom: 2rem;
+
+  }
+  .buttons>button{
+    width: 6rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    font-weight: 600;
+  }
+  .buttons>button:hover{
+    background-color: rgb(67, 47, 249);
+    color: white;
+    transform: scale(1.09);
+  }
+
+  
+  .question {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 70vh;
+    border: 1px solid rgb(250, 249, 249);
+    padding: 1rem;
+    font-size: 1.5rem;
+    overflow: auto;
+    color: aliceblue;
+    border-radius: 1rem;
+    margin-top: 1rem;
+  }
+  .answer{
+    width: 98%;
+    border-radius: .3rem;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  /* .submit{
+            margin-left: 41rem;
+            margin-right: 0rem;
+            margin-top: 22rem;
+            z-index: 2;
+            position: absolute;
+            background-color: #04041e;
+            color:#fff
+  } */
+
+  .submit:hover{
+    color: rgb(2, 2, 15);
+    font-weight: 800;
+  }
+
+ 
+
+@media (min-width: 638px) and (max-width: 979px) { 
+   
+ }
+@media (min-width:400px) and (max-width: 638px) { 
+  
+ }
+@media (min-width:0px) and (max-width: 400px) { 
+  .question {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 70vh;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+ 
+  }
+ }

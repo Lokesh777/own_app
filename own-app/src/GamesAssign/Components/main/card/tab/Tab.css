@@ -1,0 +1,29 @@
+.TabBox{
+    display: flex;
+    color: aliceblue;    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 8px;
+    line-height: 11px;
+    letter-spacing: 0.05em;
+    color: #e0dddd;
+    /* gap: 1rem; */
+    margin-top: -.8rem;
+}
+.TabBox>p{
+   border: .2px solid gray;
+   padding: 2px .5rem;
+}
+
+.secret{
+    display: flex;
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+gap: 6px;
+font-size: 8px;
+line-height: 14px;
+color: #8A8FCB;
+margin-top: -.8rem;
+}

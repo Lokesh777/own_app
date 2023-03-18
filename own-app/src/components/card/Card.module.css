@@ -1,0 +1,130 @@
+.cardContainer{
+    border: 1px solid gray;
+    border-radius: 1rem;
+    padding: 1rem;
+    
+}
+
+
+.countrate{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-around;
+   
+
+}
+.countrate > button{
+    padding: .3vh .6vh;
+    background-color: rgb(30, 7, 50);
+    color: white;
+    border-radius: 5px;
+    border: 0;
+}
+.imgContain{
+    padding: 1rem;
+    /* border: 1px solid red; */
+    position: relative;
+}
+.Img{
+    position: relative;
+}
+.category{
+    
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(30, 7, 50);
+    color: white;
+    border-radius: 3px;
+    border: 0;
+
+
+}
+.title{
+    /* border: 1px solid red; */
+    max-width: 14rem;
+    width: auto;
+    font-weight: 500;
+    color: rgb(30, 7, 50);
+}
+
+.description{
+    /* border: 1px solid red; */
+    font-size: small;
+    height: 6rem;
+
+}
+.prices{
+    font-size: larger;
+    font-weight: bold;
+    color: rgb(30, 7, 50);
+  }
+
+
+
+/* mobile */
+@media only screen and (max-width: 400px) {
+    .cardContainer{
+        padding: 1rem;
+        
+    }
+    .countrate > button{
+        padding: 0;
+        width: auto;
+        font-size: small;
+    }
+
+    
+        .category{
+            padding: auto;
+            font-size: x-small;
+        }
+        
+
+        .title{
+            max-width: auto;
+            width: auto;
+        }
+        
+        .description{
+            font-size: auto;
+            height: auto;
+            
+        
+        }
+        .prices{
+          font-size: small;
+        }
+
+  }
+  
+/* tablet */
+@media only screen and (min-width: 401px) and (max-width: 750px) {
+    .cardContainer{
+      padding: 1rem;
+        
+    }.countrate > button{
+        padding: 0;
+        width: auto;
+        font-size: small;
+    }
+    .category{
+        padding: auto;
+        font-size: small;
+    }
+   
+  }
+  
+  
+/* desktop */
+@media only screen and (min-width: 751px) and (max-width: 1024px) {
+    .cardContainer{
+       
+        padding: 1rem;
+        
+    }
+   
+  }
+  
+  

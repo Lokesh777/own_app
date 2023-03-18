@@ -1,0 +1,167 @@
+/* parent container */
+.container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+  }
+   
+
+.cardBox{
+    border: 1px solid gray;
+}
+
+.modal_overlay {
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  height: auto;
+  background-color: rgba(5, 8, 36, 0.683);
+  color: white;
+  font-size: large;
+  font-weight: 500;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.modal_content {
+  background-color: white;
+  padding: 20px;
+  background-color: rgba(5, 8, 36, 0.683);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #00000066;
+}
+.readMore{
+  font-size: small;
+    padding: .3vh .6vh;
+    background-color: rgb(30, 7, 50);
+    color: white;
+    border-radius: 5px;
+    border: 0;
+}
+.readMore:hover{
+  background-color: orangered;
+  color: white;
+  transform: scale(1.1);
+  border: 0;
+}
+
+.filtertag{
+   width: 10rem;
+   height: 1.8rem;
+   border-radius: 5px;
+  /* padding: 1rem; */
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    color: rgb(4, 4, 37);;
+    padding: 1rem;
+}
+.label{
+  font-size: larger;
+  font-weight: 800;
+  margin-right: 1rem;
+}
+/* mobile */
+@media only screen and (max-width: 412px) {
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+   padding: 2rem;
+  }
+  
+.filtertag{
+  width: 4rem;
+  height: max-content;
+}
+.readMore{
+  font-size: x-small;
+}
+
+.label{
+  font-size: small;
+  font-weight: 500;
+}
+.modal_overlay {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  width: 40%;
+  height: auto;
+ font-size: small;
+  font-weight: 300;
+  z-index: 2;
+  
+}
+
+}
+
+/* tablet */
+@media only screen and (min-width: 415px) and (max-width: 850px) {
+ 
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+   
+  }
+  .filtertag{
+    width: 8rem;
+    height: max-content;
+  }
+  .label{
+    font-size: large;
+    font-weight: 500;
+  }
+  .modal_overlay {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 60%;
+    height: auto;
+   font-size: large;
+    font-weight: 600;
+    z-index: 2;
+    
+  }
+
+  /* .analyse{
+    padding: .5rem;
+    font-size: large;
+    font-weight: 500;
+    top: 90%;
+    left: 80%;  
+  } */
+}
+
+
+/* desktop */
+@media only screen and (min-width: 851px) and (max-width: 1024px) {
+  /* Styles for devices with screen width between 600px and 1024px */
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+   
+  }
+  .label{
+    font-size: larger;
+    font-weight: 700;
+  }
+  /* .analyse{
+    padding: .5rem;
+    font-size: large;
+    font-weight: 500;
+    top: 90%;
+    left: 85%;  
+  } */
+}
+

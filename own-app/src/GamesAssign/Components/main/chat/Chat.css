@@ -1,0 +1,20 @@
+
+
+/* CSS rules for small screens go here */
+@media only screen and (min-width: 0px) and (max-width: 424px) {
+.boxchat{
+    width: 100%;
+   
+    /* border: 1px solid red; */
+}
+
+}
+/* CSS rules for mid screens go here */
+@media only screen and (min-width: 424px) and (max-width: 804px) {
+.boxchat{
+    width: 100%;
+   
+    /* border: 1px solid red; */
+}
+
+}

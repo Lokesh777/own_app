@@ -3,27 +3,36 @@ import { AppBar, Button, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme
 import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 import DrawerComp from "./DrawerComp";
 import {Link} from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
+import { SignOut } from "../Redux/Auth/action";
 
 const pages = [
   { path: "/home", label: "Home" },
 
-  { path: "/product", label: "Product" },
+  { path: "/products", label: "Product" },
 
-  { path: "/about", label: "AboutUs" },
+  { path: "/games", label: "Games" },
+
+  { path: "/quiz", label: "Quiz" },
 
   { path: "/services", label: "Servies" }
 ];
 
-export default function Navbar(): JSX.Element {
-  const [value, setValue] = useState<number | false>(false);
+export default function Navbar() {
+  const [value, setValue] = useState(false);
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   
+  const dispatcher = useDispatch();
+  const isAuth = useSelector(store => store.auth.data.isAuth);
+  const userName = useSelector(store => store.auth.data.username);
+  
+  
+ console.log(userName,"navbar username");
 
- 
   return (
     <>
-      <AppBar position="static" sx={{ background: "#063960"}}>
+      <AppBar position="static" sx={{ background: "rgb(4, 4, 37)"}}>
         <Toolbar>
           <Link to="/" style={{ textDecoration: 'none',color:"white" }}  >
           <Typography fontWeight="bold" fontSize="larger">
@@ -49,13 +58,28 @@ export default function Navbar(): JSX.Element {
                   </Link>
                 ))}
               </Tabs>
+             
               <div style={{marginLeft:"auto"}}>
-              <Link to={"auth"} style={{ textDecoration: 'none',color:"white" }} >
-                      <Button sx={{
-                         textDecoration:"none",color:"white" }} variant="contained">
-                             Login
-                      </Button>
-              </Link>
+              
+                <Link to={"auth"} style={{ textDecoration: 'none',color:"white" }} 
+                 onClick={() => {
+                  setValue(true)
+                  dispatcher(SignOut())
+                }}
+                >
+                        
+                        <Button sx={{
+                          textDecoration:"none",color:isAuth ? "white":"rgb(4, 4, 37)",backgroundColor:isAuth ? "orangered":"greenyellow",fontWeight:"bolder" }} variant="contained">
+                               {isAuth ? 'Logout' : 'Login'}
+                        </Button>
+
+                </Link>
+                {isAuth ?
+               
+                  <Button
+                    sx={{ backgroundColor:"rgb(4, 4, 37)",
+                    textDecoration:"none",color:"white" }} variant="contained"
+                    >{userName}</Button>  : ""}
                 
               </div>
       

@@ -1,0 +1,21 @@
+.fontBox{
+    display: flex;
+    justify-content: space-evenly;
+    color: rgba(255, 255, 255, 0.47);
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    background: #202636;
+    border-radius: 5px;
+}
+.fontBox >div{
+    width:19rem;
+    border-left: 1px solid #2b3345;
+}
+.fontBox :hover{
+background: #383E4C;
+border-radius: 5px 0px 0px 5px;
+color: antiquewhite;
+}

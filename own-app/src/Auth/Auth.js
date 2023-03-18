@@ -1,9 +1,8 @@
-import  { useState } from 'react';
-import { TextField, Button,Box,Typography,FormControl,InputLabel,Select,MenuItem } from '@mui/material';
-import {useNavigate} from "react-router-dom"
+import { useState } from 'react';
+import { TextField, Button, Box, Typography, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import { useNavigate } from "react-router-dom"
 import { useDispatch } from 'react-redux';
 import { SignInAction, SignUpAction } from '../Redux/Auth/action';
-
 
 const initialFormData = {
   username: "",
@@ -11,27 +10,21 @@ const initialFormData = {
   password: "",
   mobileNo: "",
   role: ""
-}
+};
 
-export default function Authentication () {
-  const [loginSignup,setLoginSignup] = useState(false);
-  // const [username, setName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [role, setRole] = useState('');
-  // const [mobileNo, setmobileNo] = useState('');
- 
-   // states and misc
-   const [formData, setFormData] = useState(initialFormData);
-   const navigator = useNavigate();
-   const dispatcher = useDispatch();
- 
-   
+export default function Authentication() {
+  const [loginSignup, setLoginSignup] = useState(false);
+  const [formData, setFormData] = useState(initialFormData);
+  const navigator = useNavigate();
+  const dispatcher = useDispatch();
+
+
   // events functions
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value })
   }
+
   const signupSuccess = () => {
     alert('Looged In Successfully');
     clearForm();
@@ -48,56 +41,13 @@ export default function Authentication () {
 
   const loginSubmit = (e) => {
     e.preventDefault();
-    dispatcher(SignInAction(formData, signupSuccess, signupError));
+    dispatcher(SignInAction(formData,formData.name, signupSuccess, signupError));
   }
 
   const signupSubmit = (e) => {
     e.preventDefault();
     dispatcher(SignUpAction(formData, signupSuccess, signupError));
   }
-
-  // const loginSubmit = async (event) => {
-  //   event.preventDefault();
-
-  //   try {
-  //     const response = await axios.post(`${API_URL}/user/login`, {
-  //       email,
-  //       password,
-  //       role
-       
-  //     });
-  //     console.log(response.data);  
-  //     alert("Login Successful!");
-  //     dispatch(SignInAction(response.data.user));
-      
-  //     navigate("/")
-  //   } catch (error) {
-  //     console.log(error); 
-      
-  //   }
-  // };
-  
-  // const signupSubmit = async (event) => {
-  //   event.preventDefault();
-    
-  //   try {
-  //     const response = await axios.post(`${API_URL}/user/signup`, {
-  //       username,
-  //       email,
-  //       password,
-  //       role,
-  //       mobileNo
-  //     });
-  //     console.log(response.data);
-  //     alert("Signup Successful!");
-  //     setLoginSignup(!loginSignup)
-  //   } catch (error) {
-  //     console.log(error); 
-  //   }
-  // };
-
- 
-
   return (
     
     <form onSubmit={loginSignup ? signupSubmit:loginSubmit}
@@ -127,6 +77,7 @@ export default function Authentication () {
        margin="normal"
         variant="outlined"
         label="username"
+        name='username'
         value={formData.username}
         onChange={handleChange}
          
@@ -136,6 +87,7 @@ export default function Authentication () {
        variant="outlined"
         label="Email"
         type="email"
+        name="email"
         value={formData.email}
         onChange={handleChange}
          
@@ -144,6 +96,7 @@ export default function Authentication () {
         variant="outlined"
         label="Password"
         type="password"
+        name="password"
         value={formData.password}
         onChange={handleChange}
          
@@ -153,6 +106,7 @@ export default function Authentication () {
         variant="outlined"
         label="mobile number"
         type="mobileNo"
+        name="mobileNo"
         value={formData.mobileNo}
         onChange={handleChange}
         required

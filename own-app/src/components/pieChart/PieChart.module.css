@@ -1,0 +1,108 @@
+.main_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .modal_data {
+    background-color: white;
+    border-radius: 4px;
+    padding: 20px;
+    width: 70%;
+    max-width: 500px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .header h2 {
+    margin: 0;
+  }
+  
+  .header button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .analyse{
+    position: fixed;
+    z-index: 100;
+    padding: .5rem;
+    background-color: orangered;
+    color: white;border: 0;
+    border-radius: 5px;
+    font-size: x-large;
+    font-weight: bold;
+    top: 86%;
+    left: 86%;  
+  }
+  .analyse:hover{
+    background-color: rgb(101, 45, 2);
+    transform: scale(.98);
+  }
+
+  
+/* mobile */
+@media only screen and (max-width: 412px) {
+.analyse{
+  position: fixed;
+  z-index: 100;
+  padding: .3rem;
+  background-color: rgb(238, 166, 11);
+  color: white;border: 0;
+  border-radius: 5px;
+  font-size: large;
+  font-weight: 100;
+  top: 90%;
+  left: 65%;  
+}
+.main_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+}
+
+/* tablet */
+@media only screen and (min-width: 415px) and (max-width: 850px) {
+ 
+  .analyse{
+    padding: .5rem;
+    font-size: large;
+    font-weight: 500;
+    top: 90%;
+    left: 80%;  
+  }
+}
+
+
+/* desktop */
+@media only screen and (min-width: 851px) and (max-width: 1024px) {
+  /* Styles for devices with screen width between 600px and 1024px */
+  .analyse{
+    padding: .5rem;
+    font-size: large;
+    font-weight: 500;
+    top: 90%;
+    left: 85%;  
+  }
+}
+

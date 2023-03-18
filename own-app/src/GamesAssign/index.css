@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  background-color:  #202636;  
+  background-image: url("https://s3-alpha-sig.figma.com/img/5902/cc59/c575704d6d295b9669e9956e9236ada0?Expires=1679270400&Signature=KLwwTw8Mjpl4FuYmjC5tqZr2yoppoN9VoeNzb9Z1L~C2Z~Cx4pzj3A2a2PA92fte~qsirJBoK3kgIGSBhdzWWW7x~jZzHqP9HrX~xSydb1vJI673OwIKnYSe7pwT0nAJkLosNWKLtVbdH86q1NSuYyen3XoIVZeiW2wA7fbBnhaIDMzqupkYGSF6atNMbgs391mynzdfEs-3bhAhzM2PnssMnXHUM8-rcBdFmsq9B-7rX~YMiV3VVDUdjC4DZQSB5p2hbyTr5zVHrL~tcTwFx6tZMgqoxQ6MOdDINZRL2AT0WhSu9qGYSw48382eaX~glcukUP6xa0xmVouQpn~4qQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  z-index: 1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -16,18 +16,17 @@ export const SignInAction = (data, onSuccess, onError) =>async (dispatch) => {
   const {email, password} = data;
   dispatch({type:auth_signIn_loading});
   try{
-      let res=await axios.post(`${API_URL}/login/login`, {email, password});
+      let res=await axios.post(`${API_URL}/user/login`, {email, password});
       console.log(res.data);
-      let {token, role, error, message, fname} = res.data;
+      let {token, role, error, message, username} = res.data;
 
-      
-
-      console.log(fname, 'dfsdfsdfgfgdfg')
+      console.log(username, 'dfsdfsdfgfgdfg')
       if(error){
           dispatch({type:auth_signIn_error, payload:message});
           onError(message)
       }else{
-          dispatch({type:auth_signIn_success, payload:{token, role, fname}});
+        dispatch({type:auth_signIn_success, payload:{token, role, username}});
+        console.log(username, 'onSuccess')
           onSuccess();
       }
 
@@ -38,10 +37,10 @@ export const SignInAction = (data, onSuccess, onError) =>async (dispatch) => {
 }
 
 export const SignUpAction = (data, onSuccess, onError) =>async (dispatch) => {
-  const {email, password, fname, lname} = data;
+  const {email, password, username, mobileNo,role} = data;
   dispatch({type:auth_signUp_loading});
   try{
-      let res=await axios.post(`${API_URL}/user/register`, {email, password, fname, lname});
+      let res=await axios.post(`${API_URL}/user/signup`, {email, password, username, mobileNo,role});
       let {error, message} = res.data;
 
       if(error){
