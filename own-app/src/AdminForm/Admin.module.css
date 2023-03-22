@@ -2,10 +2,18 @@
     width: 50%;
     text-align: center;
     margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
     justify-content: center;
-    padding: 3rem 0;
+    padding: 3rem 1rem;
       /* border: 1px solid red; */
+      box-shadow:5px 5px 10px #ccc;
+      
    
+}
+.boxDiv:hover{
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .inputDiv1{
@@ -140,7 +148,7 @@
 /* large screen */
 @media only screen and (min-width: 690px) and (max-width: 1050px) {
     .boxDiv{
-        width: auto;
+        width: 80%;
         padding: 3rem 0;
     }
     .container {
@@ -171,7 +179,7 @@
 /* tablet */
 @media only screen and (min-width: 415px) and (max-width: 715px) {
     .boxDiv{
-        width: 90%;        
+        width: 80%;        
         padding: 1rem 1rem;
         margin: auto;
     }.inputDiv1{
