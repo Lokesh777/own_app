@@ -1,12 +1,15 @@
-import { Typography, Button } from '@mui/material';
+import { Typography } from '@mui/material';
+import LandingPage from '../LandingPage/Index';
 
 const Home = () => {
 
 
   return (
     <>
-      <Typography variant="h5"> </Typography>
-      <Button variant="contained" color="primary">Logout</Button>
+      <Typography >
+        <LandingPage />
+     </Typography>
+     
     </>
   );
 };

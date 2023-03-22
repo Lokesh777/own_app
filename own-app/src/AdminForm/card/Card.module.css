@@ -7,6 +7,13 @@
 }
 
 
+.modify{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between; 
+    color: rgb(4, 4, 37);
+}
+
 .countrate{
     /* border: 1px solid red; */
     display: flex;
@@ -39,13 +46,14 @@
     color: white;
     border-radius: 3px;
     border: 0;
-
+    margin-right: .5rem;
 
 }
 .title{
     /* border: 1px solid red; */
     max-width: 14rem;
     width: auto;
+    font-size: larger;
     font-weight: 500;
     color: rgb(30, 7, 50);
 }
@@ -65,13 +73,13 @@
 
 
 /* mobile */
-@media only screen and (max-width: 400px) {
+@media only screen  and (min-width: 0px) and (max-width: 420px) {
     .cardContainer{
         padding: 1rem;
         
     }
-    .countrate > button{
-        padding: 0;
+    .countrate  button{
+        padding: .1rem .5rem ;
         width: auto;
         font-size: small;
     }
@@ -79,29 +87,29 @@
     
         .category{
             padding: auto;
-            font-size: x-small;
+            font-size: medium;
         }
         
 
-        .title{
+        /* .title{
             max-width: auto;
             width: auto;
-        }
+            font-size: large;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        } */
         
         .description{
-            font-size: auto;
-            height: auto;
-            
-        
+            height: auto; 
         }
         .prices{
-          font-size: small;
+            font-size: larger;
         }
-
+       
   }
   
 /* tablet */
-@media only screen and (min-width: 401px) and (max-width: 750px) {
+@media only screen and (min-width: 420px) and (max-width: 750px) {
     .cardContainer{
       padding: 1rem;
         

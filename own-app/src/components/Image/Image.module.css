@@ -10,24 +10,23 @@
 /* mobile */
 @media only screen and (max-width: 480px) {
     .ImgContainer{
-        width: 8rem;
+        width: 12rem;
         border-radius: 1rem;
     }
     .ImageTag{
-        width: 7rem;
-        height: 9rem;
+        height: 14rem;
     }
   }
   
 /* tablet */
 @media only screen and (min-width: 401px) and (max-width: 750px) {
     .ImgContainer{
-        width: 10rem;
+        width: 14rem;
         border-radius: 1rem;
     }
     .ImageTag{
-        width: 8rem;
-        height: 10rem;
+        /* width: 8rem; */
+        height: 15rem;
     }
   }
   
@@ -35,12 +34,11 @@
 /* desktop */
 @media only screen and (min-width: 751px) and (max-width: 1024px) {
     .ImgContainer{
-        width: 12rem;
+        width: 14rem;
         border-radius: 1rem;
     }
     .ImageTag{
-        width: 9rem;
-        height: 11rem;
+        height: 16rem;
     }
    
   }

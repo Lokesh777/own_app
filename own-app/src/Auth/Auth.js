@@ -18,21 +18,27 @@ export default function Authentication() {
   const navigator = useNavigate();
   const dispatcher = useDispatch();
 
-
-  // events functions
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value })
+  const signupSuccess = () => {
+    alert('Signup Successfully');
+    clearForm();
+    setLoginSignup(!loginSignup);
   }
 
-  const signupSuccess = () => {
-    alert('Looged In Successfully');
+  const loginError = (message) => {
+    alert(message);
+  }
+
+  const loginSuccess = () => {
+    alert('Login Successfully');
     clearForm();
     navigator('/')
   }
 
   const signupError = (message) => {
-    alert(message);
+    alert('signup Successfully',message);
+    // console.log(message);
+    // navigator('/')
+    setLoginSignup(!loginSignup);
   }
 
   const clearForm = () => {
@@ -41,13 +47,27 @@ export default function Authentication() {
 
   const loginSubmit = (e) => {
     e.preventDefault();
-    dispatcher(SignInAction(formData,formData.name, signupSuccess, signupError));
+    dispatcher(SignInAction(formData,formData.name, loginSuccess, loginError));
   }
 
   const signupSubmit = (e) => {
     e.preventDefault();
     dispatcher(SignUpAction(formData, signupSuccess, signupError));
   }
+
+
+
+  // events and functions
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  }
+
+
+  
+
+
+
   return (
     
     <form onSubmit={loginSignup ? signupSubmit:loginSubmit}
@@ -92,15 +112,15 @@ export default function Authentication() {
         onChange={handleChange}
          
       />
-      <TextField
-        variant="outlined"
-        label="Password"
-        type="password"
-        name="password"
-        value={formData.password}
-        onChange={handleChange}
-         
-      />
+        <TextField
+          variant="outlined"
+          label="Password"
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          
+        />
  {  loginSignup &&  
       <TextField
         variant="outlined"

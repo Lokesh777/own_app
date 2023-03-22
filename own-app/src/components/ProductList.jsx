@@ -43,7 +43,7 @@ function ProductList() {
 
   }, [selectedCategory, searchInput]);
    
-  // console.log(products);
+  console.log(products);
 
  
 
@@ -106,7 +106,7 @@ function ProductList() {
             count={product.rating.count}
             rate={product.rating.rate}
               />
-          ))}
+              ))}
           
            {showModal && (
                   <div className={styles.modal_overlay}>

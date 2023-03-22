@@ -5,7 +5,7 @@
     align-items: center;
     height: 90vh;
     gap: 1rem;
-    background-color: rgb(4, 4, 30);
+    background-color: #fff;
   }
   
   .buttons {
@@ -13,26 +13,31 @@
     justify-content: space-evenly;
     width: 80%;
     margin-bottom: 2rem;
+  
 
   }
   .buttons>button{
     width: 6rem;
-    padding: .5rem;
+    padding: .6rem;
     border-radius: .5rem;
-    font-weight: 600;
+    font-weight: 700;
+    border: 0;
+    background-color: rgb(4, 4, 30);
+    color: white;
   }
   .buttons>button:hover{
-    background-color: rgb(67, 47, 249);
-    color: white;
+    background-color:  orangered;
     transform: scale(1.09);
   }
 
   
   .question {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(4, 4, 30);
     width: 80%;
     height: 70vh;
     border: 1px solid rgb(250, 249, 249);
@@ -42,6 +47,7 @@
     color: aliceblue;
     border-radius: 1rem;
     margin-top: 1rem;
+    border: 0;
   }
   .answer{
     width: 98%;
@@ -50,21 +56,28 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
+    border: 0;
   }
 
-  /* .submit{
-            margin-left: 41rem;
-            margin-right: 0rem;
-            margin-top: 22rem;
+  .submitBtn{
+           position: absolute;
+           right:0;
+           bottom: 0;
+           margin:0 3rem 2rem 0;
             z-index: 2;
-            position: absolute;
-            background-color: #04041e;
-            color:#fff
-  } */
+            width: 6rem;
+            padding: .5rem;
+            border-radius: .5rem;
+            font-weight: 500;
+            border: 0;
+            font-size: smaller;
+            background-color: orangered;
+            color: white;
+  }
 
-  .submit:hover{
-    color: rgb(2, 2, 15);
-    font-weight: 800;
+  .submitBtn:hover{
+    color: #fff;
+    background-color: rgb(4, 4, 30);
   }
 
  

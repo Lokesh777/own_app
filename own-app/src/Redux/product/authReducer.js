@@ -12,7 +12,7 @@ import {
 } from './actionType'
 
 const iniToken = getLocalStorage('tokenWonderLust');
-const iniType =  getLocalStorage('roleWonderLust');
+const iniType = getLocalStorage('roleWonderLust');
 const username = getLocalStorage('nameWonderLust');
 
 const initialData = {

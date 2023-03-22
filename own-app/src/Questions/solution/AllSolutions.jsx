@@ -23,7 +23,7 @@ export default function AllSolutions() {
             setItems(items);
         }
     }, []);
-// console.log(JSON.parse(localStorage.getItem("answer")))
+console.log(items,question,"1 set")
     return (
         <div className="contain" >
            <div className="question">

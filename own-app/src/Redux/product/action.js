@@ -16,7 +16,7 @@ export const SignInAction = (data, onSuccess, onError) =>async (dispatch) => {
   const {email, password} = data;
   dispatch({type:auth_signIn_loading});
   try{
-      let res=await axios.post(`${API_URL}/login`, {email, password});
+      let res=await axios.post(`${API_URL}/user/login`, {email, password});
       console.log(res.data);
       let {token, role, error, message, username} = res.data;
 
@@ -36,16 +36,16 @@ export const SignInAction = (data, onSuccess, onError) =>async (dispatch) => {
   }
 }
 
-export const SignUpAction = (data, onSuccess, onError) => async (dispatch) => {
+export const SignUpAction = (data, onSuccess, onError) =>async (dispatch) => {
   const {email, password, username, mobileNo,role} = data;
   dispatch({type:auth_signUp_loading});
   try{
-      let res=await axios.post(`${API_URL}/signup`, {email, password, username, mobileNo,role});
+      let res=await axios.post(`${API_URL}/user/signup`, {email, password, username, mobileNo,role});
       let {error, message} = res.data;
 
       if(error){
           dispatch({type:auth_signUp_error});
-          onError(error.message,message);
+          onError(message)
       }else{
           dispatch({type:auth_signUp_success})
           onSuccess();
@@ -56,9 +56,6 @@ export const SignUpAction = (data, onSuccess, onError) => async (dispatch) => {
       onError(err.message)
   }
 }
-
-
-
 
 export const SignOut = () => {
   return ({type:auth_signOut})

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { MathJax } from "better-react-mathjax";
 import Styles from "./Questions.module.css";
-import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const Questions = () => {
@@ -36,6 +35,7 @@ const Questions = () => {
 
         const questions = await Promise.all(promises);
         setQuestions(questions);
+        // setquestionArr(questions);
         
         setLoading(false);
       } catch (error) {
@@ -47,6 +47,26 @@ const Questions = () => {
     fetchQuestions();
   }, []);
 
+  
+  const handleSubmit = () => {
+    // Save the answer to local storage
+    // `Index of answer_${currentQuestionIndex}:${answer}`
+    solutionArr.push(answer);
+    setSolutionArr(solutionArr);
+    localStorage.setItem("answer", JSON.stringify(solutionArr));
+    setAnswer("");
+    
+    questionArr.push(questions);
+    setquestionArr(questionArr);
+    localStorage.setItem("question", JSON.stringify(questionArr));
+    navigate("/ans")
+  };
+  
+  
+  const handleAnswerChange = (event) => {
+    setAnswer(event.target.value);
+  };
+  
   const handlePreviousQuestion = () => {
     setCurrentQuestionIndex((prevIndex) =>
       prevIndex === 0 ? questions.length - 1 : prevIndex - 1
@@ -58,26 +78,7 @@ const Questions = () => {
       prevIndex === questions.length - 1 ? 0 : prevIndex + 1
     );
   };
-
-  const handleSubmit = () => {
-    // Save the answer to local storage
-    // `Index of answer_${currentQuestionIndex}:${answer}`
-    solutionArr.push(answer);
-    setSolutionArr(solutionArr);
-    localStorage.setItem("answer", JSON.stringify(solutionArr));
-    setAnswer("");
-    
-    questionArr.push(answer);
-    setquestionArr(questionArr);
-    localStorage.setItem("question", JSON.stringify(questionArr));
-    navigate("/ans")
-};
-
-
-  const handleAnswerChange = (event) => {
-    setAnswer(event.target.value);
-  };
-
+  
   if (loading) {
     return <div style={{ textAlign: "center", marginTop: "3rem" }}>Loading...</div>;
   }
@@ -89,8 +90,9 @@ const Questions = () => {
   return (
     <div className={Styles.container}>
       <div className={Styles.question}>
-        <h3 style={{ color: "yellowgreen" }}>Questions:</h3>
+        <h3 style={{ color: "orangered" }}>Questions:</h3>
         <MathJax>{questions[currentQuestionIndex]}</MathJax>
+        
         <textarea
           value={answer}
           onChange={handleAnswerChange}
@@ -99,21 +101,12 @@ const Questions = () => {
           rows="20"
           cols="40"
         />
-        <Button
-          className={Styles.submit}
-          sx={{
-            marginLeft: "60%",
-            marginRight: "0rem",
-            marginTop: "22rem",
-            zIndex: "2",
-            position: "absolute",
-            backgroundColor: "#04041e",
-            color: "#fff"
-          }}
+        <button
+          className={Styles.submitBtn}
           onClick={handleSubmit}
         >
           Submit
-        </Button>
+        </button>
       </div>
 
       <div className={Styles.buttons}>
